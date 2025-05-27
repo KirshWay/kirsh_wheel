@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { useCallback,useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import type { SpinResult, WheelSegment } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -12,7 +12,7 @@ import {
   getWinningSegment,
 } from '@/lib/wheel-utils';
 
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 export type Props = {
   segments: WheelSegment[];
@@ -119,7 +119,7 @@ export const Wheel = ({
 
     return (
       <polygon
-        points={`${centerX},${pointerY} ${centerX - pointerSize},${pointerY + pointerSize * 2} ${centerX + pointerSize},${pointerY + pointerSize * 2}`}
+        points={`${centerX},${pointerY + pointerSize * 2} ${centerX - pointerSize},${pointerY} ${centerX + pointerSize},${pointerY}`}
         fill="#8A79AB"
         stroke="white"
         strokeWidth={2}

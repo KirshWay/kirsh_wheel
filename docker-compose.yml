@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  kirsh-wheel:
+    image: ghcr.io/kirshway/kirsh-wheel:latest
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+      NODE_ENV: production
+    networks:
+      - server
+      - local
+    deploy:
+      replicas: 1
+      update_config:
+        failure_action: rollback
+        order: start-first
+      restart_policy:
+        condition: on-failure
+
+  postgres:
+    image: postgres:17-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: kirsh-wheel
+    networks:
+      - local
+      - bridge
+    user: postgres
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  postgres-data:
+
+networks:
+  local:
+  server:
+    external: true
+  bridge:
+    external: true 

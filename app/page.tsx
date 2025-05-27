@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Wheel } from '@/components/wheel';
+import { Wheel } from '@/components/Wheel';
 import type { SpinResult, WheelSegment } from '@/lib/types';
 
 // TODO: TEMP DATA
