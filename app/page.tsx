@@ -27,8 +27,8 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br bg-[#6d559c] py-8">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen bg-gradient-to-br bg-[#6d559c]">
+      <div className="container mx-auto p-4">
         <div className="flex flex-col lg:flex-row items-start justify-center gap-8">
           <div className="flex flex-col items-center">
             <Wheel
@@ -63,6 +63,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
