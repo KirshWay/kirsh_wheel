@@ -64,6 +64,7 @@ jobs:
           env DATABASE_URL="${{ secrets.DATABASE_URL }}" \
           env NEXTAUTH_SECRET="${{ secrets.NEXTAUTH_SECRET }}" \
           env NEXTAUTH_URL="${{ secrets.NEXTAUTH_URL }}" \
+          env AUTH_TRUST_HOST="${{ secrets.AUTH_TRUST_HOST }}" \
           env POSTGRES_PASSWORD="${{ secrets.POSTGRES_PASSWORD }}" \
           env VERSION="${{ env.DOCKER_IMAGE_VERSION }}" \
             docker stack deploy --prune --with-registry-auth -c docker-compose.yml ${{ env.DOCKER_SWARM_PROJECT }}
