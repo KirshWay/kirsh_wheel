@@ -1,3 +1,7 @@
+<div align="center">
+  <h1>Kirsh Wheel</h1>
+</div>
+
 ### Running the Database with Docker Compose
 
 ```bash
