@@ -1,10 +1,11 @@
 'use client';
 
-import { useSession, signOut } from 'next-auth/react';
-import Link from 'next/link';
+import { LogOut, Menu, User, X } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { signOut,useSession } from 'next-auth/react';
+
 import { Button } from '@/components/ui/button';
-import { LogOut, User, Menu, X } from 'lucide-react';
 
 export const Header = () => {
   const { data: session, status } = useSession();
@@ -38,7 +39,7 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             {status === 'loading' ? (
               <div className="animate-pulse">
-                <div className="h-8 w-20 bg-gray-200 rounded"></div>
+                <div className="h-8 w-20 bg-gray-200 rounded" />
               </div>
             ) : session ? (
               <div className="flex items-center space-x-4">
@@ -93,7 +94,7 @@ export const Header = () => {
         <div className="md:hidden border-t border-gray-200 max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out peer-checked:max-h-screen peer-checked:opacity-100 peer-checked:py-4">
           {status === 'loading' ? (
             <div className="animate-pulse px-4">
-              <div className="h-8 w-20 bg-gray-200 rounded"></div>
+              <div className="h-8 w-20 bg-gray-200 rounded" />
             </div>
           ) : session ? (
             <div className="px-4 space-y-4">

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+
 import { Button } from '@/components/ui/button';
 
 export const RegisterForm = () => {
@@ -56,8 +57,8 @@ export const RegisterForm = () => {
       setTimeout(() => {
         router.push('/auth/login');
       }, 2000);
-    } catch (error: any) {
-      setError(error.message);
+    } catch {
+      setError('An error occurred while registering');
     } finally {
       setIsLoading(false);
     }
